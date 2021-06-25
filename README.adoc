@@ -1,0 +1,26 @@
+= nifi-webhook-authorizer
+
+== Purpose
+The purpose of this is to serve as a generic webhook authorizer for Apache NiFi in order to be able to secure NiFi with for example the https://www.openpolicyagent.org/[Open Policy Agent] or similar tools.
+
+== Installation
+The jar file needs to be provided on the CLASSPATH of NiFi. The easiest way to achieve this is to copy it to the `lib` directory in the install folder (not recommended to do this, but the easiest way).
+
+== Configuration
+The authorizer can be configured in the authorizer.xml file of NiFis configuration directory.
+
+----
+<authorizer>
+    <identifier>webhook-authorizer</identifier>
+    <class>tech.stackable.nifi.WebhookAuthorizer</class>
+    <property name="Authorizaten Endpoint URL">http://localhost:8000</property>
+</authorizer>
+----
+
+To make NiFi use this authorizer, it has to be referred to by name from the `nifi.properties` file:
+
+----
+nifi.security.user.authorizer=webhook-authorizer
+----
+
+Additionally an identity provider has to be configured, but this is outside the scope of this project.
