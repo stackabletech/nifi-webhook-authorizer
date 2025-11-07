@@ -1,6 +1,6 @@
 = nifi-webhook-authorizer
 
-WARNING: This repository has been archived, as there now is a useable Opa Authorizer for NiFi here: https://github.com/DavidGitter/nifi-opa-plugin
+WARNING: This repository has been archived, as there now is a useable Opa Authorizer for NiFi here: https://github.com/DavidGitter/nifi-opa-plugin.
 
 == Purpose
 The purpose of this is to serve as a generic webhook authorizer for Apache NiFi in order to be able to secure NiFi with for example the https://www.openpolicyagent.org/[Open Policy Agent] or similar tools.
